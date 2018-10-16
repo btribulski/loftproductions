@@ -3,3 +3,43 @@
   width: 35%;
   margin: 0px 20px 20px 0px;
 }
+
+
+/*service listing page*/
+
+.view-id-service_listing.view-display-id-page_1 .views-row {
+  margin-top: 10px;
+  display: grid;
+  height: 100%;
+  grid-template-columns: 30% 1fr;
+  /*grid-template-rows: 1fr 1fr 1fr 1fr;*/
+  grid-template-rows: min-content min-content min-content min-content;;
+  grid-gap: 1px 10px;
+  grid-template-areas: "image title" "image text" "image ." "image .";
+}
+
+.view-id-service_listing.view-display-id-page_1 .views-field-field-service-image {
+  grid-area: image;
+}
+.view-id-service_listing.view-display-id-page_1 .views-field-title {
+  grid-area: title;
+}
+.view-id-service_listing.view-display-id-page_1 .views-field-body {
+  grid-area: text;
+}
+.view-id-service_listing.view-display-id-page_1 .views-field-view-node {
+  grid-area: 3 / 2 / 4 / 3;
+}
+.view-id-service_listing.view-display-id-page_1 .views-field-nothing {
+  grid-area: 4 / 2 / 5 / 3;
+}
+.view-id-service_listing.view-display-id-page_1 .views-field-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: rgba(107, 125, 125, 1);
+}
+.view-id-service_listing.view-display-id-page_1 .views-field-nothing .views-row-separator {
+  height:1px;
+  margin-top: 10px;
+  background-color: #0e1f43;
+}
