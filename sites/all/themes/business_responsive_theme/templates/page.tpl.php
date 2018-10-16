@@ -196,7 +196,7 @@
       
     <div id="copyright">
      <p class="copyright"><?php print t('Copyright'); ?> &copy; <?php echo date("Y"); ?> - All Rights Reserved - <?php print $site_name; ?> </p>
-    <div class="clear"></div>
+<!--    <div class="clear"></div>-->
     </div>
   </div>
   </div>
