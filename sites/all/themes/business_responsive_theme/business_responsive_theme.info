@@ -6,10 +6,13 @@ engine = phptemplate
 stylesheets[all][] = style.css
 stylesheets[all][] = media.css
 stylesheets[all][] = css/front-page.css
+stylesheets[all][] = css/node--about-us.css
+stylesheets[all][] = css/node--contact-us.css
 stylesheets[all][] = css/node--portfolio-item.css
 stylesheets[all][] = css/node--service.css
 stylesheets[all][] = css/blocks.css
 stylesheets[all][] = css/portfolio.css
+stylesheets[all][] = css/loftproductions-custom.css
 scripts[] = js/custom.js
 
 regions[sidebar_first]  = First Sidebar

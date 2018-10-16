@@ -1,14 +1,1 @@
-.grid-container {
-  display: grid;
-  height: 100%;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 1px 1px;
-  grid-template-areas: "area1 area2" "area1 area3";
-}
 
-.area1 { grid-area: area1; }
-
-.area2 { grid-area: area2; }
-
-.area3 { grid-area: area3; }
