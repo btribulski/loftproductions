@@ -84,6 +84,17 @@
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
         <div id="site-description"><?php print $site_slogan; ?></div>
       </h1>
+
+      <?php if ($page['header_first'] || $page['header_second']): ?>
+          <div id="header-area" class="clearfix">
+            <?php if ($page['header_first']): ?>
+                <div class="column"><?php print render($page['header_first']); ?></div>
+            <?php endif; ?>
+            <?php if ($page['header_second']): ?>
+                <div class="column"><?php print render($page['header_second']); ?></div>
+            <?php endif; ?>
+          </div>
+      <?php endif; ?>
       
     <div class="clear"></div>
     </header>
@@ -184,7 +195,7 @@
    <?php endif; ?>
       
     <div id="copyright">
-     <p class="copyright"><?php print t('Copyright'); ?> &copy; <?php echo date("Y"); ?>, <?php print $site_name; ?> </p> <p class="credits"> <?php print t('Designed by'); ?>  <a href="http://www.zymphonies.com">Zymphonies</a></p>
+     <p class="copyright"><?php print t('Copyright'); ?> &copy; <?php echo date("Y"); ?> - All Rights Reserved - <?php print $site_name; ?> </p>
     <div class="clear"></div>
     </div>
   </div>

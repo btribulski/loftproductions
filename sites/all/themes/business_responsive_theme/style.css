@@ -4,7 +4,7 @@
 * Version:      1.0.0 (2014-10-14)
 * Website:      http://www.zymphonies.com
                 http://www.freebiezz.com
-* Description:  System Style
+* Description:  SysteFm Style
 * Author:       Zymphonies Dev Team
                 info@zymphonies.com
 
@@ -82,7 +82,8 @@ table {
 }
 
 body {
-  font-family: Tahoma, Georgia, Arial, sans-serif;
+  /*font-family: Tahoma, Georgia, Arial, sans-serif;*/
+  font-family:"futura-pt",Helvetica,Arial,sans-serif;
   background: #fff;
   color: #515F5C;
   font-family: Arial,Helvetica,sans-serif;
@@ -91,12 +92,12 @@ body {
 }
 
 a {
-  color: rgb(251, 90, 2);
+  color: rgb(0, 51, 83);
   text-decoration:none;
 }
 
 a:hover {
-  color: rgb(230, 80, 0);
+  color: rgb(14, 14, 146);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -108,19 +109,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size:32px;
-}
-
-h2 {
   font-size:24px;
 }
 
-h3 {
+h2 {
   font-size:18px;
 }
 
-h4 {
+h3 {
   font-size:16px;
+}
+
+h4 {
+  font-size:14px;
 }
 
 h5 {
@@ -327,7 +328,7 @@ audio {
   padding:5px;
   box-shadow:0 0 3px #EEE;
   background:#FFF;
-  border:#EEE 1px solid;
+  /*border:#EEE 1px solid;*/
 }
 
 .content a:hover img {
@@ -351,7 +352,12 @@ audio {
 
 #logo {
   float:left;
-  margin: 25px 10px 25px 5px;
+  margin: 0px 10px 25px 5px;
+}
+
+#logo img {
+  /*width: 125px;*/
+  height: 75px;
 }
 
 #site-title a,
@@ -389,8 +395,9 @@ audio {
   max-width: 1000px;
   margin: 0 auto;
   position: relative;
-  border-bottom: 2px solid rgb(251, 90, 2);
-  background: none repeat scroll 0 0 rgb(39, 39, 39);
+  border-bottom: 2px solid rgb(15, 15, 134);
+  /*background: none repeat scroll 0 0 rgb(39, 39, 39);*/
+  background: none repeat scroll 0 0 rgb(11, 11, 55);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.03);
   -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.03);
   -moz-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.03);
@@ -445,7 +452,9 @@ ul li, ul.menu li, ul.links li, .item-list ul li {
 #main-menu li a.active{
   color: #FFF;
   text-decoration: none;
-  background: none repeat scroll 0 0 rgb(251, 90, 2);
+  /*background: none repeat scroll 0 0 rgb(11, 11, 55);*/
+
+  background: none repeat scroll 0 0 rgb(39, 39, 39)
 }
 #main-menu li li a.active{
   background: rgb(30, 39, 46);
@@ -815,7 +824,7 @@ body.sidebar-second #sidebar-second {
   margin-bottom: 10px;
   font-size: 16px;
   font-weight: bold;
-  color: rgb(251, 90, 2);
+  color: rgb(0, 51, 83);
 }
 
 #footer-area ul.menu li a.active{
@@ -1478,7 +1487,7 @@ ol.search-results { padding-left: 0; }
 }
 
 #footer a{
-  color: rgb(251, 90, 2);
+  color: rgb(0, 51, 83);
 }
 
 #footer_wrapper{
@@ -1508,6 +1517,7 @@ ol.search-results { padding-left: 0; }
 #copyright {
   clear:both;    
   padding:0 0px;
+  align: center;
 }
 
 .copyright {
@@ -1524,6 +1534,7 @@ ol.search-results { padding-left: 0; }
 
 .footer_inner_credit p {
   margin:0;
+  text-align: center;
 }
 
 .footer_credit{

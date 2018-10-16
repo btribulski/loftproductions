@@ -1,0 +1,60 @@
+/* Contact Us Block */
+
+#block-block-3 .content {
+  border: #59a0d8 1px solid;
+}
+
+#block-block-3 div {
+  align: center;
+  text-align: center;
+  padding: 5px;
+}
+
+
+#block-block-3 .line1{
+  font-size: 1.8em;
+  color: rgb(30, 30, 30);
+  font-weight:bold;
+}
+
+#block-block-3 .line2{
+  font-size: 1.4em;
+  color:rgb(11, 11, 55);
+  font-weight:bold;
+}
+
+#block-block-3 .line3{
+  font-size: 1.6em;
+  color: rgb(149, 57, 0);
+  font-weight:bold;
+}
+
+#block-block-3 .line5{
+  font-size: 1.1em;
+  color:rgb(11, 11, 55);
+  font-weight:bold;
+}
+
+/* Portfolio Side Menu */
+
+#block-views-portfolio-listing-block-1 {
+  border:1px solid #9c9c9c;
+  margin-bottom: 10px;
+}
+
+#block-views-portfolio-listing-block-1 .views-row-even {
+  background-color: #d9d9d9;
+  border-bottom:1px solid #9c9c9c;
+}
+#block-views-portfolio-listing-block-1 .views-row-odd {
+  background-color: rgba(0, 32, 90, 0.11);
+  border-bottom:1px solid #9c9c9c;
+}
+
+
+/* Footer Block  */
+
+#block-block-2 .content {
+  align: center;
+  text-align: center;
+}

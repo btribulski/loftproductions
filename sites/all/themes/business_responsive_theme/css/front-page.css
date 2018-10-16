@@ -5,6 +5,9 @@
 * Author:       Zymphonies Dev Team
                 info@zymphonies.com
 
+                for gridlayouts see
+                https://www.layoutit.com/grid
+
 -----------------------------------------------*/
 
 /*
@@ -20,49 +23,80 @@
   /*margin:0px;*/
   /*height:500px;*/
 }
-.frontpage-box {
+.front-page .row {
+  clear: both;
+
+}
+
+.frontpage-left .frontpage-box {
+  width:50%;
   /*border: 1px solid #4581A4;*/
   /*-moz-border-radius: 15px;*/
   /*border-radius: 15px;*/
   /*padding: 5px;*/
   /*position:absolute;*/
-  background: url(images/background_gradients_light_blue.gif) repeat-x #FEFEFE;
-  overflow:auto;
+  /*background: url(images/background_gradients_light_blue.gif) repeat-x #FEFEFE;*/
+  /*overflow:auto;*/
+  display: inline-block;
+  float: left;
+  /*background: #4b85ac;*/
+
 }
-.frontpage-box h2 {
-  font-size:1.2em;
-  font-weight:bold;
+.grid-box h2 {
+  font-size:1.2em !important;
+  /*font-weight:bold;*/
   margin:0;
   padding:0;
 }
-/*.frontpage-box.area-1, .frontpage-box.area-2, .frontpage-box.area-3, .frontpage-box.area-4 {*/
-  /*height:230px;*/
-  /*width:210px;*/
-/*}*/
-/*.frontpage-box.area-1 {*/
-  /*top:0;*/
-  /*left:0px;*/
-/*}*/
-/*.frontpage-box.area-2 {*/
-  /*top:0;*/
-  /*left:225px;*/
-/*}*/
-/*.frontpage-box.area-3 {*/
-  /*top:245px;*/
-  /*left:0px;*/
-/*}*/
-/*.frontpage-box.area-4 {*/
-  /*top:245px;*/
-  /*left:225px;*/
-/*}*/
-/*.frontpage-box.area-5 {*/
-  /*margin-left:-5px;*/
-  /*height:475px;*/
-/*}*/
-.frontpage-box.area-5 li {
+
+.frontpage-box.area5 li {
   font-style:italic;
   font-weight:bold;
 }
-.frontpage-box.area-5 p {
+.frontpage-box.area5 p {
   line-height:1.2em
 }
+
+
+/*.grid-container {*/
+  /*display: grid;*/
+  /*height: 100%;*/
+  /*grid-template-columns: 1fr 1fr 1fr 1fr 1fr;*/
+  /*grid-template-rows: 1fr 1fr 1fr;*/
+  /*grid-gap: 1px 1px;*/
+  /*grid-template-areas: "area1 area1 . . ." ". . . . ." ". . . . .";*/
+/*}*/
+
+/*.grid-container .grid-box {*/
+  /*padding:10px;*/
+/*}*/
+
+/*.area1 { grid-area: 1 / 1 / 2 / 2; }*/
+
+/*.area2 { grid-area: 1 / 2 / 2 / 3; }*/
+
+/*.area3 { grid-area: 2 / 1 / 3 / 2; }*/
+
+/*.area4 { grid-area: 2 / 2 / 3 / 3; }*/
+
+/*.area5 { grid-area: 1 / 3 / 3 / 6; }*/
+
+
+.grid-container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 1px 1px;
+  grid-template-areas: "area1 area1 area5 area5 ." "area2 area2 area5 area5 ." "area3 area3 area5 area5 ." "area4 area4 area5 area5 .";
+}
+
+.area1 { grid-area: area1; }
+
+.area2 { grid-area: area2; }
+
+.area3 { grid-area: area3; }
+
+.area4 { grid-area: area4; }
+
+.area5 { grid-area: area5; }

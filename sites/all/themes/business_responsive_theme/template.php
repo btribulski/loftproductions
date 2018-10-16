@@ -91,6 +91,18 @@ function business_responsive_theme_preprocess_node(&$variables) {
   if ($variables['view_mode'] == 'full' && node_is_page($variables['node'])) {
     $variables['classes_array'][] = 'node-full';
   }
+
+  if ( $node->type == 'portfolio_item' ) {
+    //$vars['frontpage_image'] =
+//    $vars['page_text'] = $node->content['body']['#value'];
+//    $vars['frontpage_image'] = $node->content['field_portfolio_image']['#children'];
+//    $vars['visit_site'] =
+    $wrapper = entity_metadata_wrapper('node', $node);
+    $vars['page_text'] = $wrapper->body->value();
+    $url = $wrapper->field_url->value();
+
+    $variables['visit_site'] = (!empty($url)) ?  l('Visit This Website',$wrapper->field_url->value() ,array('attributes' => array('target' => '_blank'))) : "";
+  }
 }
 
 function business_responsive_theme_page_alter($page) {
