@@ -1,22 +1,38 @@
 /* Page Styles */
-body {
+html, body {
   /*background-color: #0e1f43;*/
   /*background-color: rgb(11, 11, 55);*/
   background-color: rgb(39, 39, 39);
+  height: 100%;
+}
+
+#page-grid {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 1fr 10%;
+  grid-gap: 1px 1px;
+  grid-template-areas: "header" "content" "footer";
 }
 
 #header-area {
   background-color: #fff;
   border:1px solid #1e1e1e;
+  grid-area: header;
+}
+
+#content_area_wrapper {
+  grid-area: content;
 }
 
 #container {
-  background-color: #fff;
-  border:1px solid #1e1e1e;
+  height: 100%;
 }
 
+
 #footer {
-  background-color: rgb(11, 11, 55);
+  /*background-color: rgb(11, 11, 55);*/
+  grid-area: footer;
 }
 
 .footer_inner_credit {

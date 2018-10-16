@@ -1,5 +1,5 @@
-.site-view {
-  float: left;
+.node-type-service .site-view {
+  float: right;
   width: 35%;
   margin: 0px 20px 20px 0px;
 }

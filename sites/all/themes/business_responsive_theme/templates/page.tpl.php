@@ -12,7 +12,8 @@
  *   or themes/garland.
  * - $is_front: TRUE if the current page is the front page.
  * - $logged_in: TRUE if the user is registered and signed in.
- * - $is_admin: TRUE if the user has permission to main-menu administration pages.
+ * - $is_admin: TRUE if the user has permission to main-menu administration
+ *   pages.
  *
  * Site identity:
  * - $front_page: The URL of the front page. Use this instead of $base_path,
@@ -43,7 +44,8 @@
  *   prominently.
  * - $tabs (array): Tabs linking to any sub-pages beneath the current page
  *   (e.g., the view and edit tabs when displaying a node).
- * - $action_links (array): Actions local to the page, such as 'Add menu' on the
+ * - $action_links (array): Actions local to the page, such as 'Add menu' on
+ *   the
  *   menu administration interface.
  * - $feed_icons: A string of all feed icons for the current page.
  * - $node: The node object, if there is an automatically-loaded node
@@ -64,140 +66,164 @@
  * @see template_process()
  */
 ?>
+<div id="page-grid">
+    <div id="header_wrapper">
+        <div id="inner_header_wrapper">
 
-<div id="header_wrapper">
-  <div id="inner_header_wrapper">
+            <header id="header" role="banner">
+              <?php if (theme_get_setting('social_links', 'business_responsive_theme')): ?>
+                  <div class="social-icons">
+                      <ul>
+                          <li><a href="<?php print $front_page; ?>/rss.xml"><img
+                                          src="<?php print base_path() . drupal_get_path('theme', 'business_responsive_theme') . '/images/rss.png'; ?>"
+                                          alt="RSS Feed"/></a></li>
+                          <li>
+                              <a href="http://www.facebook.com/<?php echo theme_get_setting('facebook_username', 'business_responsive_theme'); ?>"
+                                 target="_blank" rel="me"><img
+                                          src="<?php print base_path() . drupal_get_path('theme', 'business_responsive_theme') . '/images/facebook.png'; ?>"
+                                          alt="Facebook"/></a></li>
+                          <li>
+                              <a href="http://www.twitter.com/<?php echo theme_get_setting('twitter_username', 'business_responsive_theme'); ?>"
+                                 target="_blank" rel="me"><img
+                                          src="<?php print base_path() . drupal_get_path('theme', 'business_responsive_theme') . '/images/twitter.png'; ?>"
+                                          alt="Twitter"/></a></li>
+                      </ul>
+                  </div>
+              <?php endif; ?>
+              <?php if ($logo): ?>
+                  <div id="logo"><a href="<?php print $front_page; ?>"
+                                    title="<?php print t('Home'); ?>"><img
+                              src="<?php print $logo; ?>"/></a></div>
+              <?php endif; ?>
+                <h1 id="site-title">
+                    <a href="<?php print $front_page; ?>"
+                       title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
+                    <div id="site-description"><?php print $site_slogan; ?></div>
+                </h1>
 
-    <header id="header" role="banner">
-      <?php if (theme_get_setting('social_links', 'business_responsive_theme')): ?>
-      <div class="social-icons">
-       <ul>
-        <li><a href="<?php print $front_page; ?>/rss.xml"><img src="<?php print base_path() . drupal_get_path('theme', 'business_responsive_theme') . '/images/rss.png'; ?>" alt="RSS Feed"/></a></li>
-        <li><a href="http://www.facebook.com/<?php echo theme_get_setting('facebook_username', 'business_responsive_theme'); ?>" target="_blank" rel="me"><img src="<?php print base_path() . drupal_get_path('theme', 'business_responsive_theme') . '/images/facebook.png'; ?>" alt="Facebook"/></a></li>
-        <li><a href="http://www.twitter.com/<?php echo theme_get_setting('twitter_username', 'business_responsive_theme'); ?>" target="_blank" rel="me"><img src="<?php print base_path() . drupal_get_path('theme', 'business_responsive_theme') . '/images/twitter.png'; ?>" alt="Twitter"/></a></li>
-       </ul>
-      </div>
-    <?php endif; ?>
-      <?php if ($logo): ?><div id="logo"><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>"/></a></div>
-      <?php endif; ?>
-      <h1 id="site-title">
-        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
-        <div id="site-description"><?php print $site_slogan; ?></div>
-      </h1>
+              <?php if ($page['header_first'] || $page['header_second']): ?>
+                  <div id="header-area" class="clearfix">
+                    <?php if ($page['header_first']): ?>
+                        <div class="column"><?php print render($page['header_first']); ?></div>
+                    <?php endif; ?>
+                    <?php if ($page['header_second']): ?>
+                        <div class="column"><?php print render($page['header_second']); ?></div>
+                    <?php endif; ?>
+                  </div>
+              <?php endif; ?>
 
-      <?php if ($page['header_first'] || $page['header_second']): ?>
-          <div id="header-area" class="clearfix">
-            <?php if ($page['header_first']): ?>
-                <div class="column"><?php print render($page['header_first']); ?></div>
-            <?php endif; ?>
-            <?php if ($page['header_second']): ?>
-                <div class="column"><?php print render($page['header_second']); ?></div>
-            <?php endif; ?>
-          </div>
-      <?php endif; ?>
-      
-    <div class="clear"></div>
-    </header>
+                <div class="clear"></div>
+            </header>
 
-    <div class="menu_wrapper">
-      <nav id="main-menu"  role="navigation">
-        <a class="nav-toggle" href="#">Menu</a>
-        <div class="menu-navigation-container">
-          <?php $main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu')); 
-            print drupal_render($main_menu_tree);
-          ?>
+            <div class="menu_wrapper">
+                <nav id="main-menu" role="navigation">
+                    <a class="nav-toggle" href="#">Menu</a>
+                    <div class="menu-navigation-container">
+                      <?php $main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
+                      print drupal_render($main_menu_tree);
+                      ?>
+                    </div>
+                    <div class="clear"></div>
+                </nav><!-- end main-menu -->
+            </div>
         </div>
-        <div class="clear"></div>
-      </nav><!-- end main-menu -->
-    </div>
-  </div>
-</div>
-  
-  <div id="container">
-
-    <?php if ($is_front): ?>
-    <?php print render($page['slideshow']); ?>
-     <!-- Banner -->
-
-     <?php if ($page['top_first'] || $page['top_second'] || $page['top_third']): ?> 
-      <div id="top-area" class="clearfix">
-        <?php if ($page['top_first']): ?>
-        <div class="column"><?php print render($page['top_first']); ?></div>
-        <?php endif; ?>
-        <?php if ($page['top_second']): ?>
-        <div class="column"><?php print render($page['top_second']); ?></div>
-        <?php endif; ?>
-        <?php if ($page['top_third']): ?>
-        <div class="column"><?php print render($page['top_third']); ?></div>
-        <?php endif; ?>
-      </div>
-    <?php endif; ?>
-
-    <?php print render($page['front_welcome']); ?>
-
-    <?php endif; ?>
-
-    <div class="content-sidebar-wrap">
-
-    <div id="content">
-      <?php if (theme_get_setting('breadcrumbs', 'business_responsive_theme')): ?><div id="breadcrumbs"><?php if ($breadcrumb): print $breadcrumb; endif;?></div><?php endif; ?>
-      <section id="post-content" role="main">
-        <?php print $messages; ?>
-        <?php if ($page['content_top']): ?><div id="content_top"><?php print render($page['content_top']); ?></div><?php endif; ?>
-        <?php print render($title_prefix); ?>
-        <?php if ($title): ?><h1 class="page-title"><?php print $title; ?></h1><?php endif; ?>
-        <?php print render($title_suffix); ?>
-        <?php if (!empty($tabs['#primary'])): ?><div class="tabs-wrapper"><?php print render($tabs); ?></div><?php endif; ?>
-        <?php print render($page['help']); ?>
-        <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-        <?php print render($page['content']); ?>
-      </section> <!-- /#main -->
-    </div>
-  
-    <?php if ($page['sidebar_first']): ?>
-      <aside id="sidebar-first" role="complementary">
-        <?php print render($page['sidebar_first']); ?>
-      </aside>  <!-- /#sidebar-first -->
-    <?php endif; ?>
-  
     </div>
 
-    <?php if ($page['sidebar_second']): ?>
-      <aside id="sidebar-second" role="complementary">
-        <?php print render($page['sidebar_second']); ?>
-      </aside>  <!-- /#sidebar-first -->
-    <?php endif; ?>
-  
-</div>
+    <div id="content_area_wrapper">
+    <div id="container">
 
-<div id="footer">
-  <div id="footer_wrapper">
-    <?php if ($page['footer_first'] || $page['footer_second'] || $page['footer_third']): ?> 
-      <div id="footer-area" class="clearfix">
-        <?php if ($page['footer_first']): ?>
-        <div class="column"><?php print render($page['footer_first']); ?></div>
+      <?php if ($is_front): ?>
+        <?php print render($page['slideshow']); ?>
+          <!-- Banner -->
+
+        <?php if ($page['top_first'] || $page['top_second'] || $page['top_third']): ?>
+              <div id="top-area" class="clearfix">
+                <?php if ($page['top_first']): ?>
+                    <div class="column"><?php print render($page['top_first']); ?></div>
+                <?php endif; ?>
+                <?php if ($page['top_second']): ?>
+                    <div class="column"><?php print render($page['top_second']); ?></div>
+                <?php endif; ?>
+                <?php if ($page['top_third']): ?>
+                    <div class="column"><?php print render($page['top_third']); ?></div>
+                <?php endif; ?>
+              </div>
         <?php endif; ?>
-        <?php if ($page['footer_second']): ?>
-        <div class="column"><?php print render($page['footer_second']); ?></div>
-        <?php endif; ?>
-        <?php if ($page['footer_third']): ?>
-        <div class="column"><?php print render($page['footer_third']); ?></div>
-        <?php endif; ?>
-      </div>
-    <?php endif; ?>
-  </div>
-  <div class="footer_credit">
-    <div class="footer_inner_credit">
-    <?php if ($page['footer']): ?>
-       <div id="foot">
-        <?php print render($page['footer']) ?>
-      </div>
-   <?php endif; ?>
-      
-    <div id="copyright">
-     <p class="copyright"><?php print t('Copyright'); ?> &copy; <?php echo date("Y"); ?> - All Rights Reserved - <?php print $site_name; ?> </p>
-<!--    <div class="clear"></div>-->
+
+        <?php print render($page['front_welcome']); ?>
+
+      <?php endif; ?>
+
+        <div class="content-sidebar-wrap">
+
+            <div id="content">
+              <?php if (theme_get_setting('breadcrumbs', 'business_responsive_theme')): ?>
+                  <div id="breadcrumbs"><?php if ($breadcrumb): print $breadcrumb; endif; ?></div><?php endif; ?>
+                <section id="post-content" role="main">
+                  <?php print $messages; ?>
+                  <?php if ($page['content_top']): ?>
+                      <div id="content_top"><?php print render($page['content_top']); ?></div><?php endif; ?>
+                  <?php print render($title_prefix); ?>
+                  <?php if ($title): ?><h1
+                          class="page-title"><?php print $title; ?></h1><?php endif; ?>
+                  <?php print render($title_suffix); ?>
+                  <?php if (!empty($tabs['#primary'])): ?>
+                      <div class="tabs-wrapper"><?php print render($tabs); ?></div><?php endif; ?>
+                  <?php print render($page['help']); ?>
+                  <?php if ($action_links): ?>
+                      <ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+                  <?php print render($page['content']); ?>
+                </section> <!-- /#main -->
+            </div>
+
+          <?php if ($page['sidebar_first']): ?>
+              <aside id="sidebar-first" role="complementary">
+                <?php print render($page['sidebar_first']); ?>
+              </aside>  <!-- /#sidebar-first -->
+          <?php endif; ?>
+
+        </div>
+
+      <?php if ($page['sidebar_second']): ?>
+          <aside id="sidebar-second" role="complementary">
+            <?php print render($page['sidebar_second']); ?>
+          </aside>  <!-- /#sidebar-first -->
+      <?php endif; ?>
+
     </div>
-  </div>
-  </div>
+    </div>
+
+    <div id="footer">
+        <div id="footer_wrapper">
+          <?php if ($page['footer_first'] || $page['footer_second'] || $page['footer_third']): ?>
+              <div id="footer-area" class="clearfix">
+                <?php if ($page['footer_first']): ?>
+                    <div class="column"><?php print render($page['footer_first']); ?></div>
+                <?php endif; ?>
+                <?php if ($page['footer_second']): ?>
+                    <div class="column"><?php print render($page['footer_second']); ?></div>
+                <?php endif; ?>
+                <?php if ($page['footer_third']): ?>
+                    <div class="column"><?php print render($page['footer_third']); ?></div>
+                <?php endif; ?>
+              </div>
+          <?php endif; ?>
+        </div>
+        <div class="footer_credit">
+            <div class="footer_inner_credit">
+              <?php if ($page['footer']): ?>
+                  <div id="foot">
+                    <?php print render($page['footer']) ?>
+                  </div>
+              <?php endif; ?>
+
+                <div id="copyright">
+                    <p class="copyright"><?php print t('Copyright'); ?>
+                        &copy; <?php echo date("Y"); ?> - All Rights Reserved
+                        - <?php print $site_name; ?> </p>
+                    <!--    <div class="clear"></div>-->
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

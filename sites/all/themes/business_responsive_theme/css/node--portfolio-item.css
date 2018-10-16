@@ -1,5 +1,10 @@
-.site-view {
+.node-type-portfolio-item .site-view {
   float: right;
   width: 35%;
   margin-bottom: 10%;
+}
+
+.node-type-portfolio-item .site-view .site-link {
+  text-align: center;
+  font-weight: bold;
 }
